@@ -14,7 +14,7 @@ export default function Home() {
         <Header></Header>
         <Slider></Slider>
       </ConteinerCeleste>
-      <Link href="/lista">
+      <Link href="/products-lista">
         <ButtonPrymary></ButtonPrymary>
       </Link>
       <ConteinerTextIntro>

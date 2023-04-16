@@ -8,7 +8,6 @@ import Image from "next/image";
 const LogoMarca = styled(Logo)`
   padding-top: 90px;
   width: 100%;
-  /* height: 400px; */
 `;
 
 const ImagenSlider = styled(Image)`
@@ -42,9 +41,6 @@ export function Slider({ children }: any) {
         <div className="keen-slider__slide">
           <ImagenSlider src={Poo} alt="poo" />
         </div>
-        <div className="keen-slider__slide">3</div>
-        <div className="keen-slider__slide">3</div>
-        <div className="keen-slider__slide">3</div>
       </div>
     </SliderContainer>
   );

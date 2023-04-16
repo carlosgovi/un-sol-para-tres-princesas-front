@@ -1,7 +1,7 @@
 import MenuIcon from "./menu.svg";
 import Logo from "./logo.svg";
 import ShoopingBag from "./shopping-bag.svg";
-// export function IconoMenu({ className }: any) {
-//   return <Menu className={className} />;
-// }
-export { MenuIcon, Logo, ShoopingBag };
+import Lupa from "./lupa.svg";
+import IconBack from "./iconBack.svg";
+import Corazon from "./corazon.svg";
+export { IconBack, Lupa, MenuIcon, Logo, ShoopingBag, Corazon };
