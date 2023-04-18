@@ -2,6 +2,8 @@ import { HeaderLista } from "@/components/header-lista";
 import TitleListProducts from "@/ui/title-list-products";
 import { SliderSearchFillter } from "@/components/Slider-search-filter";
 import { ProductCard } from "@/components/card-product";
+import Header from "@/components/header";
+import styled from "styled-components";
 const arrayByProducts = [
   {
     name: "Producto1",
@@ -34,6 +36,7 @@ const arrayByProducts = [
     ID: 5,
   },
 ];
+
 export default function Lista() {
   return (
     <div>

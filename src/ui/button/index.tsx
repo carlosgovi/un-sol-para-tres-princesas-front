@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { ShoopingBag, MenuIcon } from "../icon";
+import { ShoopingBag, InitSesion, LogInIcon } from "../icon";
 
-export const ElButton = styled.div`
+export const ElButton = styled.button`
   position: absolute;
-  z-index: 22;
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,16 +27,30 @@ const SvgButton = styled(ShoopingBag)`
   width: 30px;
   height: 30px;
 `;
-
-export function ButtonPrymary({ children }: any) {
+export function ButtonPrymary() {
   return (
     <ConteinerButton>
-      <Foo>
+      <ElButton>
         <SvgButton />
-      </Foo>
+      </ElButton>
     </ConteinerButton>
   );
 }
-function Foo({ children }: any) {
-  return <ElButton>{children}</ElButton>;
+export function ButtonInitEmail() {
+  return (
+    <ConteinerButton>
+      <ElButton>
+        <InitSesion />
+      </ElButton>
+    </ConteinerButton>
+  );
+}
+export function ButtonInitClave() {
+  return (
+    <ConteinerButton>
+      <ElButton>
+        <LogInIcon />
+      </ElButton>
+    </ConteinerButton>
+  );
 }
