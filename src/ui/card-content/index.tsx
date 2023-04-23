@@ -10,6 +10,7 @@ const Conteiner = styled.div`
 type Props = {
   name: string;
   price: number;
+  Materials: string[];
 };
 const TitleCard = styled(Title)`
   margin-left: 0px;
@@ -31,8 +32,8 @@ export default function CardContent(props: Props) {
   return (
     <Conteiner>
       <TitleCard>{props.name}</TitleCard>
-      <TextType>Textil</TextType>
-      <TextCard>{props.price} $</TextCard>
+      <TextType>{props.Materials[0]}</TextType>
+      <TextCard>$ {props.price}</TextCard>
     </Conteiner>
   );
 }

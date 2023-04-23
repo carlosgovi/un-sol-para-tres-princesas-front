@@ -2,7 +2,10 @@ import { HeaderLista } from "@/components/header-lista";
 import TitleListProducts from "@/ui/title-list-products";
 import { SliderSearchFillter } from "@/components/Slider-search-filter";
 import { ProductCard } from "@/components/card-product";
+import { useAllProducts, useSearchProductsByTypeAndQuery } from "@/lib/hooks";
 import Header from "@/components/header";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { filterState, selecFilterAtom, selecSearchAtom } from "@/lib/atoms";
 import styled from "styled-components";
 const arrayByProducts = [
   {
@@ -37,13 +40,45 @@ const arrayByProducts = [
   },
 ];
 
+function filterObjetoToString(state: any) {
+  return state.plasticos
+    ? "plasticos"
+    : state.textiles
+    ? "textiles"
+    : state.sets
+    ? "sets"
+    : state.vinilos
+    ? "vinilos"
+    : state.papeleria
+    ? "papeleria"
+    : state.todos
+    ? " "
+    : "";
+}
+function getProductsByQueryAndType(stateFilter: any, stateSearch: any) {
+  const elType = filterObjetoToString(stateFilter);
+  const query = stateSearch;
+  console.log("query=====", { query });
+
+  // const type = "plasticos";
+  const products = useSearchProductsByTypeAndQuery(query, elType);
+
+  return products?.results;
+}
+
 export default function Lista() {
+  const stateFilter = useRecoilValue(selecFilterAtom);
+  const stateSearch = useRecoilValue(selecSearchAtom);
+
+  // const array = getAllProducts();
+  const array = getProductsByQueryAndType(stateFilter, stateSearch);
+
   return (
     <div>
-      <HeaderLista />
+      <Header state="list" />
       <TitleListProducts />
       <SliderSearchFillter />
-      <ProductCard products={arrayByProducts} />
+      <ProductCard products={array} />
     </div>
   );
 }

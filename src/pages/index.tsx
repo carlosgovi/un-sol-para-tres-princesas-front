@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div>
       <ConteinerCeleste>
-        <Header></Header>
+        <Header state="inicio"></Header>
         <Slider></Slider>
       </ConteinerCeleste>
       <Link href="/products-lista">

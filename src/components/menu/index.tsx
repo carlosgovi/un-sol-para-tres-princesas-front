@@ -62,7 +62,7 @@ export function MenuPrincipal(props: { open: boolean }) {
         <Linked href="/">
           <li>Contacto</li>
         </Linked>
-        <Linked href="/">
+        <Linked href="/sesion-init">
           <li>Inicio Sesion</li>
         </Linked>
       </ul>

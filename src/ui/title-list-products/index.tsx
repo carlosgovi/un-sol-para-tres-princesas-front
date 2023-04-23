@@ -2,6 +2,7 @@ import { Title, Text } from "@/ui/typography";
 import styled from "styled-components";
 
 const ConteinerTitle = styled.div`
+  padding-top: 100px;
   width: 100%;
   padding-left: 20px;
 `;

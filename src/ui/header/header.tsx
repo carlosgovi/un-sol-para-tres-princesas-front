@@ -6,18 +6,20 @@ export const Conteiner = styled.div`
   padding: 20px;
   position: absolute;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   z-index: 12;
 `;
 export const Menu = styled.div`
-  width: 50px;
-  height: 50px;
+  z-index: 12;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
 `;
 export const IconMenu = styled(MenuIcon)`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+
   color: #808080;
   &:hover {
     color: #fff;

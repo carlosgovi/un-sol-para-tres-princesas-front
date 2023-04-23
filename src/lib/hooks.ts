@@ -11,3 +11,16 @@ export function useProduct(id: string) {
   const { data, error } = useSWRInmutable("/products/" + id, fetchAPI);
   return data;
 }
+
+export function useAllProducts() {
+  const { data, error } = useSWRInmutable("/search", fetchAPI);
+  return data;
+}
+
+export function useSearchProductsByTypeAndQuery(query = "", type = "") {
+  const { data, error } = useSWRInmutable(
+    "/search?search=" + query + " " + type,
+    fetchAPI
+  );
+  return data;
+}

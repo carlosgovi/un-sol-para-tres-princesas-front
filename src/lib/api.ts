@@ -1,22 +1,21 @@
 const BASE_URL = "https://un-sol-para-tres-princesas-back.vercel.app/api";
 // const BASE_URL = "http://localhost:3001/api";
 
-//localhost:3001
 async function fetchAPI(input: RequestInfo, options: any) {
   const url = BASE_URL + input;
-  const token = getSavedToken();
+  const token = await getSavedToken();
   const newOptions: any = options || {};
 
   newOptions.headers ||= {};
 
   if (token) {
-    newOptions.headers.authorization = "Bearer" + token;
+    newOptions.headers.authorization = "Bearer " + token;
   }
   newOptions.headers["Content-Type"] = "application/json";
   if (newOptions.body) {
     newOptions.body = JSON.stringify(newOptions.body);
   }
-  console.log("el log de las newOptions", newOptions);
+  console.log("LLAMADA A::: fetchAPI:::opciones:", newOptions);
 
   const res = await fetch(url, newOptions);
   if (res.status >= 200 && res.status < 300) {
