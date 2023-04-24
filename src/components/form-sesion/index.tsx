@@ -3,9 +3,11 @@ import { ButtonPrymary, ButtonInitEmail, ButtonInitClave } from "@/ui/button";
 import { EmailInput, ClaveInput } from "../../ui/inputs";
 import { useState } from "react";
 import { sendCode, getToken } from "@/lib/api";
+import { Title } from "@/ui/typography";
+import Router from "next/router";
 
 const Conteiner = styled.div`
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   padding-top: 100px;
@@ -28,22 +30,25 @@ export function FormularioSesion() {
       const res = await getToken(email, code);
       //por medio del router envio al user a la home
       console.log("token autorizado");
-      console.log("la res", res);
-
-      // Router.push("/");
+      Router.push("/");
     } catch (error) {
       console.log(error);
     }
   }
   //estilo el formulario de email para mostrar si no hay email previo
   const emailFormStyle = {
-    display: email ? "none" : "block",
+    display: email ? "none" : "grid",
+    justifyContent: "center",
+    alignItems: "center",
   };
   const codeFormStyle = {
-    display: email ? "block" : "none",
+    display: email ? "grid" : "none",
+    justifyContent: "center",
+    alignItems: "center",
   };
   return (
     <Conteiner>
+      <Title>Inicio de sesion</Title>
       <form style={emailFormStyle} onSubmit={handlerEmailForm}>
         <EmailInput type="email" placeholder="Email" name="email" />
         <ButtonInitEmail />

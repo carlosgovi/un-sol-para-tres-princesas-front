@@ -1,3 +1,5 @@
+import { stringify } from "querystring";
+
 const BASE_URL = "https://un-sol-para-tres-princesas-back.vercel.app/api";
 // const BASE_URL = "http://localhost:3001/api";
 
@@ -41,9 +43,32 @@ async function getToken(email: string, code: string) {
   });
   //guardo el token el local
   saveToken(data.token);
+  getDataUser();
   return true;
 }
+// salvo los datos de user en la DB
+async function sendUserProfile(data: {
+  name: string;
+  address: string;
+  phone: string;
+}) {
+  return fetchAPI("/me", {
+    method: "PATCH",
+    body: { ...data },
+  });
+}
+// get de los datos del User en la DB
+async function getDataUser() {
+  const data = await fetchAPI("/me", {
+    method: "GET",
+  });
+  console.log("data", data);
 
+  saveUserProfile(JSON.stringify(data));
+}
+async function saveUserProfile(data: any) {
+  localStorage.setItem("user_Profile", data);
+}
 async function saveToken(token: string) {
   localStorage.setItem("auth_token", token);
 }
@@ -51,4 +76,4 @@ async function getSavedToken() {
   return localStorage.getItem("auth_token");
 }
 
-export { fetchAPI, sendCode, getToken };
+export { fetchAPI, sendCode, getToken, sendUserProfile, getDataUser };

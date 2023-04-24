@@ -15,6 +15,16 @@ export const EmailInput = styled.input`
   }
 `;
 export const ClaveInput = styled(EmailInput)``;
+export const GenericInput = styled(EmailInput)`
+  margin: 5px;
+  :focus {
+    outline: none;
+    background-color: #5d55ff48;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    border: solid 2px #ffffffa7;
+  }
+`;
 export const SearchInput = styled(EmailInput)`
   color: white;
   background-color: #9b95f59e;

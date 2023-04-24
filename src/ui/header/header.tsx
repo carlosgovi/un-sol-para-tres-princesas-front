@@ -27,8 +27,8 @@ export const IconMenu = styled(MenuIcon)`
   }
 `;
 export const IconX = styled(Xicon)`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   color: #808080;
   &:hover {
     color: #fff;

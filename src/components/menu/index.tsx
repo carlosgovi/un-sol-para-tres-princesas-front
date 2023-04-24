@@ -56,6 +56,9 @@ export function MenuPrincipal(props: { open: boolean }) {
         <Linked href="/">
           <li>Inicio</li>
         </Linked>
+        <Linked href="profile">
+          <li>Perfil de Usuario</li>
+        </Linked>
         <Linked href="/products-lista">
           <li>Productos</li>
         </Linked>
