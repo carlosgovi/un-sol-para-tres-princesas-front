@@ -30,9 +30,13 @@ export function FormularioProfile() {
       address: string;
       phone: string;
     } = { name, address, phone };
-    sendUserProfile(data);
-    Router.push("/");
-    getDataUser();
+    try {
+      sendUserProfile(data);
+      getDataUser();
+      Router.push("/");
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (

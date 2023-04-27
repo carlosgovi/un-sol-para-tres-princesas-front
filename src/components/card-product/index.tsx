@@ -30,7 +30,7 @@ function handleClickCard(itemId: string) {
   Router.push(`/item/${itemId}`);
 }
 export const ProductCard = (list?: any) => {
-  // console.log("los Products", list);
+  console.log("los Products", list);
   //   const Products = [...list.products] || [];
   const Products: any = [];
   if (list.products) {
@@ -48,13 +48,15 @@ export const ProductCard = (list?: any) => {
                 {/* vamos a probar con pasar la imagen de la cart por el background de la card (el src es para una eqtiqueta de imagen)por si lo de pasar en el background de la card no funciona  */}
                 <ImageCard
                   src={Stich}
-                  backgroundImage={product.Images[0].url}
+                  backgroundImage={
+                    product.Images[0].url && product.Images[0].url
+                  }
                 />
                 {/* <Title>{product.name}</Title> : <Text>{product.price}$</Text> */}
                 <CardContent
-                  Materials={product.Materials}
-                  name={product.Name}
-                  price={product.UnitCost}
+                  Materials={product.Materials && product.Materials}
+                  name={product.Name && product.Name}
+                  price={product.UnitCost && product.UnitCost}
                 />
               </Card>
             );

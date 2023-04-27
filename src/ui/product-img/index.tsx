@@ -14,17 +14,22 @@ const Conteiner = styled.div<ContainerProps>`
   align-items: end;
 `;
 const ConteinerText = styled.div`
+  background-color: rgb(126 0 255 / 25%);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0px 20px 0px 20px;
 `;
 const NameProduct = styled(Title)`
+  color: #fff;
+  text-align: left;
   margin: 0px;
   font-weight: 700;
   font-size: 28px;
 `;
 const PriceProduct = styled(Text)`
+  color: #fff;
+
   font-weight: 500;
   font-size: 24px;
 `;
