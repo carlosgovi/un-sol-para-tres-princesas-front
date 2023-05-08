@@ -36,7 +36,7 @@ const Container = styled.div<ButtonProps>`
     li {
       font-size: 24px;
       font-weight: bold;
-      color: #747474;
+      color: #bfbfbf;
       cursor: pointer;
       margin: 15px;
       text-align: center;
