@@ -5,6 +5,8 @@ import { useState } from "react";
 import { sendCode, getToken } from "@/lib/api";
 import { Title } from "@/ui/typography";
 import Router from "next/router";
+import { useRecoilState } from "recoil";
+import { sesionAtom } from "@/lib/atoms";
 
 const Conteiner = styled.div`
   display: grid;
@@ -16,6 +18,7 @@ const Conteiner = styled.div`
 export function FormularioSesion() {
   // placeholder = 'Enter text'
   const [email, setEmail] = useState("");
+  const [sesion, setSesion] = useRecoilState(sesionAtom);
   function handlerEmailForm(e: any) {
     e.preventDefault();
     const email: string = e.target.email.value;
@@ -30,6 +33,8 @@ export function FormularioSesion() {
       const res = await getToken(email, code);
       //por medio del router envio al user a la home
       console.log("token autorizado");
+      ///si el token es valido el atomo es actualizado y redirijo a home
+      setSesion(res);
       Router.push("/");
     } catch (error) {
       console.log(error);

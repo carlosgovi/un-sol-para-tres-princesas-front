@@ -36,6 +36,8 @@ export const ProductCard = (list?: any) => {
   if (list.products) {
     Products.push(...list.products);
   }
+  console.log("Products", Products);
+
   return (
     <ConteinerCard>
       {Products
@@ -49,7 +51,8 @@ export const ProductCard = (list?: any) => {
                 <ImageCard
                   src={Stich}
                   backgroundImage={
-                    product.Images[0].url && product.Images[0].url
+                    product.Images[0].thumbnails.large.url &&
+                    product.Images[0].thumbnails.large.url
                   }
                 />
                 {/* <Title>{product.name}</Title> : <Text>{product.price}$</Text> */}

@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { Title } from "@/ui/typography";
 import Image from "next/image";
 import { Instagram, Whatsapp } from "@/ui/assets";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { sesionAtom, selecSesionAtom } from "@/lib/atoms";
 
 interface ButtonProps {
   open: boolean;
@@ -36,7 +38,7 @@ const Container = styled.div<ButtonProps>`
     li {
       font-size: 24px;
       font-weight: bold;
-      color: #bfbfbf;
+      color: #ececec;
       cursor: pointer;
       margin: 15px;
       text-align: center;
@@ -70,9 +72,12 @@ interface UserProfile {
 //recive por props si el menu esta open i no esta open
 export function MenuPrincipal(props: { open: boolean }) {
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+  const stateSesion = useRecoilValue(selecSesionAtom);
+  const [sesion, setSesion] = useRecoilState(sesionAtom);
   function handleLogout() {
     localStorage.removeItem("auth_token");
     localStorage.removeItem("user_Profile");
+    setSesion(false);
     window.location.reload();
     console.log("logout");
   }
@@ -80,7 +85,7 @@ export function MenuPrincipal(props: { open: boolean }) {
   useEffect(() => {
     const localStorageUser: any = localStorage.getItem("user_Profile");
     setUserProfile(JSON.parse(localStorageUser));
-  }, [setUserProfile]);
+  }, [stateSesion]);
 
   return (
     <Container open={props.open}>

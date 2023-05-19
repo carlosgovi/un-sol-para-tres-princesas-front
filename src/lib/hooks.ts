@@ -8,6 +8,7 @@ export function useMe() {
 }
 
 export function useProduct(id: string) {
+  id?.trim();
   const { data, error } = useSWRInmutable("/products/" + id, fetchAPI);
   return data;
 }

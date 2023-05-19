@@ -1,5 +1,5 @@
 import { atom, selector } from "recoil";
-import { useEffect } from "react";
+
 export const filterState = atom({
   key: "filterState",
   default: {
@@ -30,5 +30,17 @@ export const selecSearchAtom = selector({
     const getSearch = get(searchAtom);
     getSearch.trim();
     return getSearch;
+  },
+});
+
+export const sesionAtom = atom({
+  key: "sesionAtom",
+  default: false,
+});
+export const selecSesionAtom = selector({
+  key: "selecSesionAtom",
+  get: ({ get }) => {
+    const getSesion = get(sesionAtom);
+    return getSesion;
   },
 });

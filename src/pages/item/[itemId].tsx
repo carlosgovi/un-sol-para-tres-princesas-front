@@ -18,6 +18,7 @@ function getOneItem() {
   //  const itemId: any = useRouter().query.itemId;
 
   const itemId = Router.query.itemId;
+
   const Item = useProduct(itemId);
 
   return Item?.result;
@@ -30,7 +31,7 @@ export default function Product() {
       <ImgProduct
         name={ProductData?.Name}
         price={ProductData?.UnitCost}
-        backgroundImage={ProductData?.Images[0].url}
+        backgroundImage={ProductData?.Images[0].thumbnails.large.url}
       ></ImgProduct>
       <ProductDescription>{ProductData?.Description}</ProductDescription>
       <ButtonBuyder />
