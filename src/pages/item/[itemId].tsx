@@ -1,6 +1,5 @@
 import Header from "@/components/header";
 import { ImgProduct } from "@/ui/product-img";
-import { Stich } from "@/ui/assets";
 import { ProductDescription } from "@/ui/product-description";
 import { ButtonBuyder } from "@/ui/button-buy";
 import { useRouter } from "next/router";

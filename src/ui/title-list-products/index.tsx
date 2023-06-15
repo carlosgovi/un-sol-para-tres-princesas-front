@@ -6,6 +6,11 @@ const ConteinerTitle = styled.div`
   width: 100%;
   padding-left: 20px;
 `;
+const nuevotitle=styled.div`
+  padding-top: 100px;
+  width: 100%;
+  padding-left: 20px;
+`;
 export default function TitleListProducts() {
   return (
     <div>

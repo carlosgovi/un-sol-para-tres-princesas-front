@@ -1,6 +1,7 @@
 import { stringify } from "querystring";
 
 const BASE_URL = "https://un-sol-para-tres-princesas-back.vercel.app/api";
+// siempre usamos el back que está en vercel para hacer pruebas
 // const BASE_URL = "http://localhost:3001/api";
 
 async function fetchAPI(input: RequestInfo, options: any) {

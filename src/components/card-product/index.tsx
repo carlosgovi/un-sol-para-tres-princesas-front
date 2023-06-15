@@ -5,6 +5,8 @@ import { Stich } from "@/ui/assets";
 import { ImageCard } from "@/ui/card-img";
 import CardContent from "@/ui/card-content";
 import Router from "next/router";
+import { Suspense, lazy } from "react";
+import Loading from "@/components/loading";
 const ConteinerCard = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,7 +31,8 @@ const Card = styled.div`
 function handleClickCard(itemId: string) {
   Router.push(`/item/${itemId}`);
 }
-export const ProductCard = (list?: any) => {
+
+export default function ProductCard(list?: any) {
   console.log("los Products", list);
   //   const Products = [...list.products] || [];
   const Products: any = [];
@@ -40,31 +43,33 @@ export const ProductCard = (list?: any) => {
 
   return (
     <ConteinerCard>
-      {Products
-        ? Products.map((product: any) => {
-            return (
-              <Card
-                onClick={() => handleClickCard(product.objectID)}
-                key={product.objectID}
-              >
-                {/* vamos a probar con pasar la imagen de la cart por el background de la card (el src es para una eqtiqueta de imagen)por si lo de pasar en el background de la card no funciona  */}
-                <ImageCard
-                  src={Stich}
-                  backgroundImage={
-                    product.Images[0].thumbnails.large.url &&
-                    product.Images[0].thumbnails.large.url
-                  }
-                />
-                {/* <Title>{product.name}</Title> : <Text>{product.price}$</Text> */}
-                <CardContent
-                  Materials={product.Materials && product.Materials}
-                  name={product.Name && product.Name}
-                  price={product.UnitCost && product.UnitCost}
-                />
-              </Card>
-            );
-          })
-        : null}
+      <Suspense fallback={<Loading />}>
+        {Products
+          ? Products.map((product: any) => {
+              return (
+                <Card
+                  onClick={() => handleClickCard(product.objectID)}
+                  key={product.objectID}
+                >
+                  {/* vamos a probar con pasar la imagen de la cart por el background de la card (el src es para una eqtiqueta de imagen)por si lo de pasar en el background de la card no funciona  */}
+                  <ImageCard
+                    src={Stich}
+                    backgroundImage={
+                      product.Images[0].thumbnails.large.url &&
+                      product.Images[0].thumbnails.large.url
+                    }
+                  />
+                  {/* <Title>{product.name}</Title> : <Text>{product.price}$</Text> */}
+                  <CardContent
+                    Materials={product.Materials && product.Materials}
+                    name={product.Name && product.Name}
+                    price={product.UnitCost && product.UnitCost}
+                  />
+                </Card>
+              );
+            })
+          : null}
+      </Suspense>
     </ConteinerCard>
   );
-};
+}

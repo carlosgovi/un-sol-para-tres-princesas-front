@@ -7,6 +7,9 @@ import { ConteinerCeleste } from "@/ui/conteiner-celeste";
 import { ConteinerTextIntro } from "@/ui/container-text-intro";
 import { ButtonPrymary } from "@/ui/button";
 import Link from "next/link";
+
+
+
 export default function Home() {
   return (
     <div>
@@ -24,6 +27,7 @@ export default function Home() {
           exclusividad.
         </Text>
       </ConteinerTextIntro>
+      
     </div>
   );
 }

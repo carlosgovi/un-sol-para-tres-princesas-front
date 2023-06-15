@@ -1,12 +1,17 @@
 import { HeaderLista } from "@/components/header-lista";
 import TitleListProducts from "@/ui/title-list-products";
 import { SliderSearchFillter } from "@/components/Slider-search-filter";
-import { ProductCard } from "@/components/card-product";
+import ProductCard from "@/components/card-product";
 import { useAllProducts, useSearchProductsByTypeAndQuery } from "@/lib/hooks";
 import Header from "@/components/header";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { filterState, selecFilterAtom, selecSearchAtom } from "@/lib/atoms";
 import styled from "styled-components";
+import { Suspense, lazy } from "react";
+
+import Loading from "@/components/loading";
+
+//const Product = React.lazy(() => import('@/components/card-product'))
 const arrayByProducts = [
   {
     name: "Producto1",
@@ -78,6 +83,7 @@ export default function Lista() {
       <Header state="list" />
       <TitleListProducts />
       <SliderSearchFillter />
+
       <ProductCard products={array} />
     </div>
   );
