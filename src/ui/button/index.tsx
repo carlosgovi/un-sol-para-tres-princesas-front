@@ -2,12 +2,11 @@ import styled from "styled-components";
 import { ShoopingBag, InitSesion, LogInIcon } from "../icon";
 
 export const ElButton = styled.button`
-  position: absolute;
   z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  margin: 10px;
   top: 450px;
   background-color: white;
   width: 86px;
@@ -33,6 +32,13 @@ export function ButtonPrymary() {
       <ElButton>
         <SvgButton />
       </ElButton>
+    </ConteinerButton>
+  );
+}
+export function ButtonSecondary() {
+  return (
+    <ConteinerButton>
+      <ElButton>Desings</ElButton>
     </ConteinerButton>
   );
 }

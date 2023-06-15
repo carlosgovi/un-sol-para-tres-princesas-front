@@ -5,10 +5,8 @@ import { Slider } from "@/components/Slider";
 import { Title, Text } from "@/ui/typography";
 import { ConteinerCeleste } from "@/ui/conteiner-celeste";
 import { ConteinerTextIntro } from "@/ui/container-text-intro";
-import { ButtonPrymary } from "@/ui/button";
+import { ButtonPrymary, ButtonSecondary } from "@/ui/button";
 import Link from "next/link";
-
-
 
 export default function Home() {
   return (
@@ -17,9 +15,15 @@ export default function Home() {
         <Header state="inicio"></Header>
         <Slider></Slider>
       </ConteinerCeleste>
-      <Link href="/products-lista">
-        <ButtonPrymary></ButtonPrymary>
-      </Link>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Link href="/products-lista">
+          <ButtonPrymary></ButtonPrymary>
+        </Link>
+
+        <Link href="/desings">
+          <ButtonSecondary></ButtonSecondary>
+        </Link>
+      </div>
       <ConteinerTextIntro>
         <Title>Un Sol para Tres Princesas Enciende tu creatividad</Title>
         <Text>
@@ -27,7 +31,6 @@ export default function Home() {
           exclusividad.
         </Text>
       </ConteinerTextIntro>
-      
     </div>
   );
 }
