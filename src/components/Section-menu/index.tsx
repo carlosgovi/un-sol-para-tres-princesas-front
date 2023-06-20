@@ -70,9 +70,9 @@ export function SectionMenu() {
     <>
       <Row>
         {card.map((card) => (
-          <div>
+          <>
             <CardMenu {...card} />
-          </div>
+          </>
         ))}
       </Row>
     </>

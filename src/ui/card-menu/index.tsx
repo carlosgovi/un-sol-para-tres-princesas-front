@@ -24,7 +24,7 @@ const CardsText = styled.div`
   height: 58px;
   gap: 10px;
 `;
-function CardMenu({ image, title, subtitle }) {
+function CardMenu({ image, title, subtitle }: any) {
   return (
     <>
       <CardContainer>
