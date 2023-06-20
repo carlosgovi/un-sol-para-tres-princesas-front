@@ -11,6 +11,7 @@ import Download from "./download.png";
 import Shar from "./shar.png";
 import Shoppingcart from "./shoppingcart.png";
 import Truck from "./truck.png";
+
 import Twocircules from "./twocircule.png";
 import Write from "./write.png";
 

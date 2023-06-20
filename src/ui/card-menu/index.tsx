@@ -11,6 +11,13 @@ const CardContainer = styled.div`
   width: 337px;
   height: 58px;
   gap: 20px;
+  :hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.5s;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
 `;
 
 const CardsText = styled.div`
@@ -18,20 +25,34 @@ const CardsText = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  jus
+
   text-align: center;
   width: 337px;
   height: 58px;
-  gap: 10px;
+`;
+
+const ImageMod = styled(Image)`
+  width: 37px;
+  height: 40px;
+`;
+const TitleMod = styled(Title)`
+  margin: 10px;
+  margin-bottom: 2px;
+`;
+const TextMod = styled(Text)`
+  margin: 0;
 `;
 function CardMenu({ image, title, subtitle }: any) {
   return (
     <>
       <CardContainer>
-        <Image src={image} alt="" />
+        <div>
+          <ImageMod src={image} alt="" />
+        </div>
+
         <CardsText>
-          <Title>{title}</Title>
-          <Text>{subtitle}</Text>
+          <TitleMod>{title}</TitleMod>
+          <TextMod>{subtitle}</TextMod>
         </CardsText>
       </CardContainer>
     </>

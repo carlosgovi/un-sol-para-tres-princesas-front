@@ -2,6 +2,7 @@ import React from "react";
 
 import { Title, Text } from "@/ui/typography";
 import Image from "next/image";
+
 import CardMenu from "@/ui/card-menu";
 
 import {
@@ -9,9 +10,9 @@ import {
   Download,
   Shar,
   Shoppingcart,
-  Truck,
   Twocircules,
   Write,
+  Truck,
 } from "@/ui/assets";
 
 import styled from "styled-components";
@@ -47,7 +48,12 @@ const card = [
     title: "Produce",
     subtitle: "la produccion es lo nuestro",
   },
-  { id: 6, image: Truck, title: "Envia", subtitle: "Entrega en tiemp y forma" },
+  {
+    id: 6,
+    image: Truck,
+    title: "Envia",
+    subtitle: "Entrega en tiemp y forma",
+  },
 
   {
     id: 7,
@@ -61,8 +67,10 @@ const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 50px;
-  margin: 50px;
-  justify-content: space-between;
+  margin: 40px;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
   align-items: center;
 `;
 export function SectionMenu() {
