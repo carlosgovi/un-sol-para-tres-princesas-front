@@ -72,6 +72,23 @@ const Row = styled.div`
   align-content: center;
   justify-items: center;
   align-items: center;
+  background: rgba(239, 244, 248, 0.18);
+  background: rgba(214, 220, 222, 0.18);
+  background: radial-gradient(
+    circle farthest-corner at top center,
+    rgba(214, 220, 222, 0.18) 0%,
+    #ffffff 80%
+  );
+  background: -webkit-radial-gradient(
+    circle farthest-corner at top center,
+    rgba(214, 220, 222, 0.18) 0%,
+    #ffffff 80%
+  );
+  background: -moz-radial-gradient(
+    circle farthest-corner at top center,
+    rgba(214, 220, 222, 0.18) 0%,
+    #ffffff 80%
+  );
 `;
 export function SectionMenu() {
   return (
