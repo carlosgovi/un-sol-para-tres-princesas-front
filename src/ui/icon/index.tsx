@@ -18,5 +18,4 @@ export {
   Corazon,
   LogInIcon,
   Xicon,
-  Truck,
 };
