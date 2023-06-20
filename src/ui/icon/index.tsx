@@ -7,7 +7,7 @@ import Corazon from "./corazon.svg";
 import InitSesion from "./initSesion.svg";
 import LogInIcon from "./log-in.svg";
 import Xicon from "./x.svg";
-import Truck from "./truck.svg";
+
 export {
   InitSesion,
   IconBack,
