@@ -31,6 +31,7 @@ export default function HeaderDesings() {
             alt=""
             placeholder="blur"
             layout="intrinsic"
+            loading="lazy"
           ></ImageHeader>
           <TitleHeader>Has realidad tus Diseños</TitleHeader>
         </ContainerHeader>
