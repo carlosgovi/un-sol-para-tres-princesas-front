@@ -15,7 +15,7 @@ const TitleHeader = styled(Title)`
   font-size: 5vw;
   color: #ffffffc5;
   position: absolute;
-  top: 17%;
+  top: 14%;
   /* @media (min-width: 720px) {
     top: 24%;
   } */
