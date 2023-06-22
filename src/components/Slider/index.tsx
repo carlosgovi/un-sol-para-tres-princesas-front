@@ -30,16 +30,20 @@ export function Slider({ children }: any) {
     <SliderContainer>
       <div ref={sliderRef} className="keen-slider">
         <div className="keen-slider__slide">
-          <LogoMarca />
+          <LogoMarca priority />
         </div>
         <div className="keen-slider__slide">
-          <ImagenSlider src={MochilaUnicornio} alt="poo" />
+          <ImagenSlider
+            src={MochilaUnicornio}
+            alt="Mochila"
+            placeholder="blur"
+          />
         </div>
         <div className="keen-slider__slide">
-          <ImagenSlider src={Stich} alt="poo" />
+          <ImagenSlider src={Stich} alt="stich" placeholder="blur" />
         </div>
         <div className="keen-slider__slide">
-          <ImagenSlider src={Poo} alt="poo" />
+          <ImagenSlider src={Poo} alt="poo" placeholder="blur" />
         </div>
       </div>
     </SliderContainer>

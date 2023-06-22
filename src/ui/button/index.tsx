@@ -16,6 +16,7 @@ export const ElButton = styled.button`
   box-shadow: -1px 11px 9px 0px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: -1px 11px 9px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: -1px 11px 9px 0px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 `;
 const ConteinerButton = styled.div`
   display: flex;
