@@ -28,6 +28,7 @@ const Arrow = styled(IconBack)`
   position: relative;
   top: 3px;
   z-index: 1;
+  cursor: pointer;
 `;
 const ElLink = styled(Link)`
   text-decoration: none;

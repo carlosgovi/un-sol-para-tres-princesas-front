@@ -41,7 +41,7 @@ export const ImageCard = (props: { src: any; backgroundImage: any }) => {
         <Corazon />
       </ContainerFavorite>
       {/* <ImageInCard
-        priority={true}
+        placeholder="blur"
         width={115}
         height={70}
         src={props.src}
