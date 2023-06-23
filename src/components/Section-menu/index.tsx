@@ -68,27 +68,11 @@ const Row = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 50px;
   margin: 40px;
+  padding: 10px;
   justify-content: center;
   align-content: center;
   justify-items: center;
   align-items: center;
-  background: rgba(239, 244, 248, 0.18);
-  background: rgba(214, 220, 222, 0.18);
-  background: radial-gradient(
-    circle farthest-corner at top center,
-    rgba(214, 220, 222, 0.18) 0%,
-    #ffffff 80%
-  );
-  background: -webkit-radial-gradient(
-    circle farthest-corner at top center,
-    rgba(214, 220, 222, 0.18) 0%,
-    #ffffff 80%
-  );
-  background: -moz-radial-gradient(
-    circle farthest-corner at top center,
-    rgba(214, 220, 222, 0.18) 0%,
-    #ffffff 80%
-  );
 `;
 export function SectionMenu() {
   return (
