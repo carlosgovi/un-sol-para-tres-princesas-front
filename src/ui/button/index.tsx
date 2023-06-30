@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ShoopingBag, InitSesion, LogInIcon } from "../icon";
+import { ShoopingBag, InitSesion, LogInIcon, Briefcase } from "../icon";
 
 export const ElButton = styled.button`
   z-index: 10;
@@ -27,10 +27,14 @@ const SvgButton = styled(ShoopingBag)`
   width: 30px;
   height: 30px;
 `;
+const SvgBriefcase = styled(Briefcase)`
+  width: 30px;
+  height: 30px;
+`;
 export function ButtonPrymary() {
   return (
     <ConteinerButton>
-      <ElButton>
+      <ElButton title="Productos">
         <SvgButton />
       </ElButton>
     </ConteinerButton>
@@ -39,7 +43,9 @@ export function ButtonPrymary() {
 export function ButtonSecondary() {
   return (
     <ConteinerButton>
-      <ElButton>Desings</ElButton>
+      <ElButton title="Deja tu diseño">
+        <SvgBriefcase />
+      </ElButton>
     </ConteinerButton>
   );
 }

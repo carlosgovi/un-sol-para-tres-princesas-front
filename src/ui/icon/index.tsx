@@ -7,7 +7,7 @@ import Corazon from "./corazon.svg";
 import InitSesion from "./initSesion.svg";
 import LogInIcon from "./log-in.svg";
 import Xicon from "./x.svg";
-
+import Briefcase from "./briefcase.svg";
 export {
   InitSesion,
   IconBack,
@@ -18,4 +18,5 @@ export {
   Corazon,
   LogInIcon,
   Xicon,
+  Briefcase,
 };

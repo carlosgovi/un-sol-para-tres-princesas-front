@@ -25,7 +25,7 @@ export default function Home() {
         </Link>
       </div>
       <ConteinerTextIntro>
-        <Title>Un Sol para Tres Princesas Enciende tu creatividad</Title>
+        <Title>Enciende tu creatividad</Title>
         <Text>
           Sublimación y productos personalizados para quien busca originalidad y
           exclusividad.

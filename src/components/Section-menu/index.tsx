@@ -33,7 +33,7 @@ const card = [
   {
     id: 3,
     image: Shar,
-    title: "comparte",
+    title: "Comparte",
     subtitle: "Un link para el mundo",
   },
   {
@@ -46,20 +46,20 @@ const card = [
     id: 5,
     image: Gears,
     title: "Produce",
-    subtitle: "la produccion es lo nuestro",
+    subtitle: "La produccion es lo nuestro",
   },
   {
     id: 6,
     image: Truck,
     title: "Envia",
-    subtitle: "Entrega en tiemp y forma",
+    subtitle: "Entrega en tiempo y forma",
   },
 
   {
     id: 7,
     image: Twocircules,
     title: "Repite",
-    subtitle: "Vuelve  cuando quieras",
+    subtitle: "Vuelve cuando quieras",
   },
 ];
 

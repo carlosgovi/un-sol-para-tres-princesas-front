@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Image from "next/image";
 
 const LogoMarca = styled(Logo)`
-  padding-top: 20px;
+  padding: 20px;
   width: 100%;
 `;
 

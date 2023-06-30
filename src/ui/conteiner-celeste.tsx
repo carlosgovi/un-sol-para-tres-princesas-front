@@ -5,7 +5,7 @@ export const ConteinerCeleste = styled.div`
   height: 550px;
   background: linear-gradient(
     180deg,
-    rgba(166, 218, 255, 0.57) 0%,
-    rgba(204, 212, 255, 0) 90.88%
+    rgba(153, 153, 153, 0.57) 0%,
+    rgba(161, 171, 227, 0) 100%
   );
 `;

@@ -2,7 +2,7 @@ import { stringify } from "querystring";
 
 const BASE_URL = "https://un-sol-para-tres-princesas-back.vercel.app/api";
 // siempre usamos el back que está en vercel para hacer pruebas
-// const BASE_URL = "http://localhost:3001/api";
+//const BASE_URL = "http://localhost:3001/api";
 
 async function fetchAPI(input: RequestInfo, options: any) {
   const url = BASE_URL + input;
@@ -67,6 +67,13 @@ async function getDataUser() {
 
   saveUserProfile(JSON.stringify(data));
 }
+//crear orden de compra
+async function createOrder(product: string) {
+  return fetchAPI("/order?productId=" + product, {
+    method: "POST",
+    body: { productId: product },
+  });
+}
 async function saveUserProfile(data: any) {
   localStorage.setItem("user_Profile", data);
 }
@@ -77,4 +84,11 @@ async function getSavedToken() {
   return localStorage.getItem("auth_token");
 }
 
-export { fetchAPI, sendCode, getToken, sendUserProfile, getDataUser };
+export {
+  fetchAPI,
+  sendCode,
+  getToken,
+  sendUserProfile,
+  getDataUser,
+  createOrder,
+};

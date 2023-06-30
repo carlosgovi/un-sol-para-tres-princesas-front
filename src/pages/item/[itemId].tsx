@@ -4,6 +4,7 @@ import { ProductDescription } from "@/ui/product-description";
 import { ButtonBuyder } from "@/ui/button-buy";
 import { useRouter } from "next/router";
 import { useProduct } from "@/lib/hooks";
+import { log } from "console";
 // const ProductData = {
 //   name: "Producto1",
 //   description:
@@ -22,6 +23,7 @@ function getOneItem() {
 
   return Item?.result;
 }
+
 export default function Product() {
   const ProductData: any = getOneItem();
   return (
@@ -33,7 +35,7 @@ export default function Product() {
         backgroundImage={ProductData?.Images[0].thumbnails.large.url}
       ></ImgProduct>
       <ProductDescription>{ProductData?.Description}</ProductDescription>
-      <ButtonBuyder />
+      <ButtonBuyder item={ProductData?.objectID} />
     </div>
   );
 }

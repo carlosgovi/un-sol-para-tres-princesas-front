@@ -6,10 +6,11 @@ import { Title } from "@/ui/typography";
 const ContainerHeader = styled.div``;
 const ImageHeader = styled(Image)`
   width: 100%;
-  height: auto;
+  height: 100%;
   min-height: 170px;
   max-height: 375px;
   filter: brightness(70%);
+  box-shadow: 0px 0px 250px 50px rgba(0, 0, 0, 0.25);
 `;
 const TitleHeader = styled(Title)`
   font-size: 5vw;
@@ -23,19 +24,15 @@ const TitleHeader = styled(Title)`
 
 export default function HeaderDesings() {
   return (
-    <>
-      <header>
-        <ContainerHeader>
-          <ImageHeader
-            src={HeaderImg}
-            alt=""
-            placeholder="blur"
-            layout="intrinsic"
-            loading="lazy"
-          ></ImageHeader>
-          <TitleHeader>Has realidad tus Diseños</TitleHeader>
-        </ContainerHeader>
-      </header>
-    </>
+    <ContainerHeader>
+      <ImageHeader
+        src={HeaderImg}
+        alt=""
+        placeholder="blur"
+        layout="intrinsic"
+        loading="lazy"
+      ></ImageHeader>
+      <TitleHeader>Has realidad tus Diseños</TitleHeader>
+    </ContainerHeader>
   );
 }
