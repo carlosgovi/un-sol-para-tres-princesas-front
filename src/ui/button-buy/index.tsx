@@ -38,7 +38,7 @@ async function handleClickButton(item: string) {
 
   console.log("EL Sandbox:::::", orden.url.response.init_point);
   //redireccionar con el url que me da la orden (asi el usuario hace el pago)
-  //window.location.href = orden.url.response.sandbox_init_point;
+  window.location.href = orden.url.response.sandbox_init_point;
 }
 export function ButtonBuyder(props: any) {
   const [loading, setLoading] = useState(false);
