@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Instagram, Whatsapp } from "@/ui/assets";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { sesionAtom, selecSesionAtom } from "@/lib/atoms";
+import { useSesionLocal } from "@/lib/hooks";
 
 interface ButtonProps {
   open: boolean;
@@ -71,8 +72,14 @@ interface UserProfile {
 
 //recive por props si el menu esta open i no esta open
 export function MenuPrincipal(props: { open: boolean }) {
-  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+  /* const [userProfile, setUserProfile] = useState<UserProfile | null>(null); */
   const stateSesion = useRecoilValue(selecSesionAtom);
+  const userProfile = useSesionLocal();
+  /* console.log("sesion hook TEST", sesionHook); */
+
+  console.log("sesion del menu en atoom", stateSesion);
+  console.log("sesion del menu en swr", userProfile);
+
   const [sesion, setSesion] = useRecoilState(sesionAtom);
   function handleLogout() {
     localStorage.removeItem("auth_token");
@@ -82,10 +89,10 @@ export function MenuPrincipal(props: { open: boolean }) {
     console.log("logout");
   }
 
-  useEffect(() => {
+  /*  useEffect(() => {
     const localStorageUser: any = localStorage.getItem("user_Profile");
     setUserProfile(JSON.parse(localStorageUser));
-  }, [stateSesion]);
+  }, [stateSesion]); */
 
   return (
     <Container open={props.open}>

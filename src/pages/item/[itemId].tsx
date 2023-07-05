@@ -4,7 +4,7 @@ import { ProductDescription } from "@/ui/product-description";
 import { ButtonBuyder } from "@/ui/button-buy";
 import { useRouter } from "next/router";
 import { useProduct } from "@/lib/hooks";
-import { log } from "console";
+import { PropagateLoader } from "react-spinners";
 // const ProductData = {
 //   name: "Producto1",
 //   description:
@@ -23,12 +23,9 @@ function getOneItem() {
 
   return Item?.result;
 }
-
-export default function Product() {
-  const ProductData: any = getOneItem();
+function DataProduct(ProductData: any) {
   return (
     <div>
-      <Header></Header>
       <ImgProduct
         name={ProductData?.Name}
         price={ProductData?.UnitCost}
@@ -36,6 +33,27 @@ export default function Product() {
       ></ImgProduct>
       <ProductDescription>{ProductData?.Description}</ProductDescription>
       <ButtonBuyder item={ProductData?.objectID} />
+    </div>
+  );
+}
+export default function Product() {
+  const ProductData: any = getOneItem();
+
+  return (
+    <div>
+      <Header></Header>
+      {!ProductData ? (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <PropagateLoader size={25} />
+        </div>
+      ) : (
+        DataProduct(ProductData)
+      )}
     </div>
   );
 }

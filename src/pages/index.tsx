@@ -1,6 +1,4 @@
 import Header from "@/components/header";
-
-import styled from "styled-components";
 import { Slider } from "@/components/Slider";
 import { Title, Text } from "@/ui/typography";
 import { ConteinerCeleste } from "@/ui/conteiner-celeste";

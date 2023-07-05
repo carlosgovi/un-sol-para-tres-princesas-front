@@ -25,3 +25,11 @@ export function useSearchProductsByTypeAndQuery(query = "", type = "") {
   );
   return data;
 }
+//necesito que el swr traiga los datos de el  localStorage.getItem("user_Profile") y que los guarde parseados y si esta vacio retorne un string vacio
+export function useSesionLocal() {
+  const { data, error } = useSWR("sesion", () => {
+    const localStorageUser: any = localStorage.getItem("user_Profile");
+    return JSON.parse(localStorageUser);
+  });
+  return data ?? "";
+}

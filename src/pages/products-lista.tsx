@@ -1,4 +1,3 @@
-import { HeaderLista } from "@/components/header-lista";
 import TitleListProducts from "@/ui/title-list-products";
 import { SliderSearchFillter } from "@/components/Slider-search-filter";
 import ProductCard from "@/components/card-product";
@@ -6,8 +5,7 @@ import { useAllProducts, useSearchProductsByTypeAndQuery } from "@/lib/hooks";
 import Header from "@/components/header";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { filterState, selecFilterAtom, selecSearchAtom } from "@/lib/atoms";
-import styled from "styled-components";
-import { Suspense, lazy } from "react";
+import { PropagateLoader } from "react-spinners";
 
 import Loading from "@/components/loading";
 
@@ -83,7 +81,11 @@ export default function Lista() {
       <Header state="list" />
       <TitleListProducts />
       <SliderSearchFillter />
-
+      <div
+        style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
+      >
+        {!array ? <PropagateLoader /> : null}
+      </div>
       <ProductCard products={array} />
     </div>
   );
