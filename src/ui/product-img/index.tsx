@@ -12,9 +12,12 @@ const Conteiner = styled.div<ContainerProps>`
   //empujar hasta el final del Conteiner a ConteinerText
   display: grid;
   align-items: end;
+  @media (min-width: 700px) {
+    height: 700px;
+  }
 `;
 const ConteinerText = styled.div`
-  background-color: rgb(126 0 255 / 25%);
+  background-color: #4498d943;
   display: flex;
   align-items: center;
   justify-content: space-between;

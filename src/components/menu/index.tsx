@@ -22,7 +22,7 @@ const Container = styled.div<ButtonProps>`
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #a58effd5;
+  background-color: #012d7c73;
   z-index: 11;
 
   ul {
@@ -48,6 +48,11 @@ const Container = styled.div<ButtonProps>`
       &:hover {
         color: #ffffff;
         transition: all 0.3s ease-in-out;
+        -webkit-transition-property: all;
+        -webkit-transition-duration: 1s;
+        transition-property: all;
+        transition-duration: 0.5s;
+        scale: 1.05;
       }
     }
   }
@@ -77,9 +82,6 @@ export function MenuPrincipal(props: { open: boolean }) {
   const userProfile = useSesionLocal();
   /* console.log("sesion hook TEST", sesionHook); */
 
-  console.log("sesion del menu en atoom", stateSesion);
-  console.log("sesion del menu en swr", userProfile);
-
   const [sesion, setSesion] = useRecoilState(sesionAtom);
   function handleLogout() {
     localStorage.removeItem("auth_token");
@@ -108,9 +110,11 @@ export function MenuPrincipal(props: { open: boolean }) {
         </Linked>
 
         {userProfile ? (
-          <Title style={{ color: "white" }}>
-            {userProfile && userProfile.email}
-          </Title>
+          <li>
+            <Title style={{ color: "white" }}>
+              {userProfile && userProfile.email}
+            </Title>
+          </li>
         ) : null}
         {userProfile ? (
           <li onClick={handleLogout}>Cerrar Sesion</li>

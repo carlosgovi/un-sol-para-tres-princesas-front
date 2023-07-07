@@ -44,18 +44,16 @@ const TextMod = styled(Text)`
 `;
 function CardMenu({ image, title, subtitle }: any) {
   return (
-    <>
-      <CardContainer>
-        <div>
-          <ImageMod src={image} alt="" />
-        </div>
+    <CardContainer>
+      <div>
+        <ImageMod src={image} alt="" />
+      </div>
 
-        <CardsText>
-          <TitleMod>{title}</TitleMod>
-          <TextMod>{subtitle}</TextMod>
-        </CardsText>
-      </CardContainer>
-    </>
+      <CardsText>
+        <TitleMod>{title}</TitleMod>
+        <TextMod>{subtitle}</TextMod>
+      </CardsText>
+    </CardContainer>
   );
 }
 

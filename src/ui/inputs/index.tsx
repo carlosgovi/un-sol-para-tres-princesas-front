@@ -27,7 +27,7 @@ export const GenericInput = styled(EmailInput)`
 `;
 export const SearchInput = styled(EmailInput)`
   color: white;
-  background-color: #9b95f59e;
+  background-color: #4498d9be;
   position: absolute;
   top: 0;
   left: 0;
@@ -36,6 +36,7 @@ export const SearchInput = styled(EmailInput)`
   margin: auto;
   width: 100%;
   transition: all 0.3s ease-in-out;
+  animation: 0.3s;
   font-size: 30px;
   ::placeholder {
     color: #ffffffa7;
@@ -44,9 +45,8 @@ export const SearchInput = styled(EmailInput)`
   }
   :focus {
     outline: none;
-    background-color: #9b95f5de;
+    background-color: #4498d9f5;
     color: white;
-    transition: all 0.3s ease-in-out;
-    border: solid 2px #ffffffa7;
+    border: solid 4px #ffffffa7;
   }
 `;

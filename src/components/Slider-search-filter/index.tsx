@@ -1,29 +1,38 @@
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import styled from "styled-components";
-import { useState } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { filterState, selecFilterAtom } from "@/lib/atoms";
+import { useRecoilState } from "recoil";
+import { filterState } from "@/lib/atoms";
 interface ButtonProps {
   active: boolean;
 }
-
+/* #5ab17d #4498d9eb */
 const StyledButtonForFilter = styled.button<ButtonProps>`
   //background-color recive la varible de active seteando el color
   background-color: ${({ active }: ButtonProps) =>
-    active ? "#A58EFF" : "#F4F4F4"};
+    active ? "#4498d9eb" : "#F4F4F4"};
   color: ${({ active }: ButtonProps) => (active ? "#fff" : "#747474")};
-  height: 33px;
+  height: ${({ active }: ButtonProps) => (active ? "37px" : "33px")};
   border-radius: 10px;
+  animation: 2s;
   border: none;
 `;
 const ConteinerSlider = styled.div`
   padding-left: 20px;
 `;
+// con next.js traerme el tamaño de la pantalla
+const displayWidth: any = () => {
+  if (typeof window !== "undefined") {
+    return window.innerWidth;
+  }
+};
+console.log("el tamaño de la pantalla", displayWidth());
+
 export function SliderSearchFillter() {
   const [sliderRef] = useKeenSlider({
     loop: true,
     mode: "free",
+    dragSpeed: 0.7,
     slides: {
       perView: 5,
       spacing: 5,

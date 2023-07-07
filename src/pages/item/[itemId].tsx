@@ -5,6 +5,7 @@ import { ButtonBuyder } from "@/ui/button-buy";
 import { useRouter } from "next/router";
 import { useProduct } from "@/lib/hooks";
 import { PropagateLoader } from "react-spinners";
+import styled from "styled-components";
 // const ProductData = {
 //   name: "Producto1",
 //   description:
@@ -23,17 +24,46 @@ function getOneItem() {
 
   return Item?.result;
 }
+/// contenedor de los datos de los productos - los contenidos son responcives
+const ContainDataProducts = styled.div`
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media (min-width: 700px) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+`;
+//Container Description and Button
+const ContainDescriptionAndButton = styled.div`
+  //separar los items de los contenedores
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+
+  @media (min-width: 700px) {
+  }
+`;
 function DataProduct(ProductData: any) {
   return (
-    <div>
+    <ContainDataProducts>
       <ImgProduct
         name={ProductData?.Name}
         price={ProductData?.UnitCost}
         backgroundImage={ProductData?.Images[0].thumbnails.large.url}
       ></ImgProduct>
-      <ProductDescription>{ProductData?.Description}</ProductDescription>
-      <ButtonBuyder item={ProductData?.objectID} />
-    </div>
+      <ContainDescriptionAndButton>
+        <ProductDescription>{ProductData?.Description}</ProductDescription>
+
+        <ButtonBuyder item={ProductData?.objectID} />
+      </ContainDescriptionAndButton>
+    </ContainDataProducts>
   );
 }
 export default function Product() {

@@ -33,13 +33,20 @@ export function Slider({ children }: any) {
       <div ref={sliderRef} className="keen-slider">
         <div
           className="keen-slider__slide"
-          style={{ display: "flex", justifyContent: "center" }}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
         >
           <LogoMarca />
         </div>
         <div
           className="keen-slider__slide"
-          style={{ display: "flex", justifyContent: "center" }}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            borderRadius: "40px 40px 40px 40px ",
+          }}
         >
           <ImagenSlider
             src={MochilaUnicornio}
@@ -49,13 +56,21 @@ export function Slider({ children }: any) {
         </div>
         <div
           className="keen-slider__slide"
-          style={{ display: "flex", justifyContent: "center" }}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            borderRadius: "40px 40px 40px 40px ",
+          }}
         >
           <ImagenSlider src={Stich} alt="stich" placeholder="blur" />
         </div>
         <div
           className="keen-slider__slide"
-          style={{ display: "flex", justifyContent: "center" }}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            borderRadius: "40px 40px 40px 40px ",
+          }}
         >
           <ImagenSlider src={Poo} alt="poo" placeholder="blur" />
         </div>

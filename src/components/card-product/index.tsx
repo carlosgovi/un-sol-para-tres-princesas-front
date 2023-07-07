@@ -8,10 +8,21 @@ import Router from "next/router";
 import { Suspense, lazy } from "react";
 import Loading from "@/components/loading";
 const ConteinerCard = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  padding: 20px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
 `;
 const Card = styled.div`
   margin: 20px;
@@ -21,7 +32,6 @@ const Card = styled.div`
   height: 75px;
   background-color: #fff;
   border-radius: 10px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   transition: all 0.3s ease-in-out;
   &:hover {
     transform: scale(1.05);

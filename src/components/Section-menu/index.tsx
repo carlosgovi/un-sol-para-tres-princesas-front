@@ -76,14 +76,10 @@ const Row = styled.div`
 `;
 export function SectionMenu() {
   return (
-    <>
-      <Row>
-        {card.map((card) => (
-          <>
-            <CardMenu {...card} />
-          </>
-        ))}
-      </Row>
-    </>
+    <Row>
+      {card.map((card) => (
+        <CardMenu key={card.id} {...card} />
+      ))}
+    </Row>
   );
 }

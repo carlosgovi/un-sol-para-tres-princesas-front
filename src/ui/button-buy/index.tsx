@@ -14,7 +14,7 @@ const Conteiner = styled.div`
 const ButtonBuy = styled.button`
   width: 229px;
   height: 52px;
-  background: #a58eff;
+  background: #4498d9eb;
   border-radius: 12px;
   color: #ffffff;
   border: none;
@@ -22,7 +22,7 @@ const ButtonBuy = styled.button`
   margin: 20px;
   &:hover {
     cursor: pointer;
-    background: #7c6eff;
+    background: #4498d9;
   }
 `;
 const Favorite = styled(ContainerFavorite)`
@@ -47,28 +47,26 @@ export function ButtonBuyder(props: any) {
   }
 
   return (
-    <>
-      <Conteiner>
-        <Favorite>
-          <Corazon />
-        </Favorite>
-        <ButtonBuy
-          onClick={() => {
-            if (sesion) {
-              setLoading(true);
-              handleClickButton(props.item);
-            }
-          }}
-        >
-          {loading ? (
-            <PropagateLoader color="#ffffff" size={10} />
-          ) : sesion ? (
-            "Comprar"
-          ) : (
-            "Iniciar sesión"
-          )}
-        </ButtonBuy>
-      </Conteiner>
-    </>
+    <Conteiner>
+      <Favorite>
+        <Corazon />
+      </Favorite>
+      <ButtonBuy
+        onClick={() => {
+          if (sesion) {
+            setLoading(true);
+            handleClickButton(props.item);
+          }
+        }}
+      >
+        {loading ? (
+          <PropagateLoader color="#ffffff" size={10} />
+        ) : sesion ? (
+          "Comprar"
+        ) : (
+          "Iniciar sesión"
+        )}
+      </ButtonBuy>
+    </Conteiner>
   );
 }
